@@ -1523,12 +1523,34 @@ public class SelfBalancingTree<T> where T : IComparable<T>
         return (nodes.Item1, nodes.Item2);
     }
 
-    public Node ToBalancedBSTree(List<T> list)
+    public SelfBalancingTree<T> ToBalancedBSTree(List<T> list)
     {
         return ToBalancedBSTree(list, 0, list.Count - 1);
     }
 
-    private Node ToBalancedBSTree(List<T> list, int lIndex, int rIndex, Node root = null)
+    private SelfBalancingTree<T> ToBalancedBSTree(List<T> list, int lIndex, int rIndex, SelfBalancingTree<T> bst = null)
+    {
+        if (lIndex > rIndex) return bst;
+
+        int midpoint = ((lIndex + rIndex) / 2) + ((lIndex + rIndex) % 2);
+
+        if (bst == null)
+            bst = new SelfBalancingTree<T>();
+
+        bst.Add(list[midpoint]);
+
+        bst = ToBalancedBSTree(list, lIndex, midpoint - 1, bst);
+        bst = ToBalancedBSTree(list, midpoint + 1, rIndex, bst);
+
+        return bst;
+    }
+
+    public Node ToBalancedBSTree2(List<T> list)
+    {
+        return ToBalancedBSTree2(list, 0, list.Count - 1);
+    }
+
+    private Node ToBalancedBSTree2(List<T> list, int lIndex, int rIndex, Node root = null)
     {
         if (lIndex > rIndex) return root;
 
@@ -1536,32 +1558,10 @@ public class SelfBalancingTree<T> where T : IComparable<T>
 
         root = new Node(list[midpoint]);
 
-        root.Left = ToBalancedBSTree(list, lIndex, midpoint - 1, root.Left);
-        root.Right = ToBalancedBSTree(list, midpoint + 1, rIndex, root.Right);
+        root.Left = ToBalancedBSTree2(list, lIndex, midpoint - 1, root.Left);
+        root.Right = ToBalancedBSTree2(list, midpoint + 1, rIndex, root.Right);
 
         return root;
-    }
-
-    public SelfBalancingTree<T> ToBalancedBSTree2(List<T> list)
-    {
-        return ToBalancedBSTree2(list, 0, list.Count - 1);
-    }
-
-    private SelfBalancingTree<T> ToBalancedBSTree2(List<T> list, int lIndex, int rIndex, SelfBalancingTree<T> bst = null)
-    {
-        if (lIndex > rIndex) return bst;
-
-        int midpoint = (lIndex + rIndex) / 2;
-
-        if (bst == null)
-            bst = new SelfBalancingTree<T>();
-
-        bst.Add(list[midpoint]);
-
-        bst = ToBalancedBSTree2(list, lIndex, midpoint - 1, bst);
-        bst = ToBalancedBSTree2(list, midpoint + 1, rIndex, bst);
-
-        return bst;
     }
 
     public Node InvertTree_DFS_Recursion()
@@ -1644,7 +1644,7 @@ public class SelfBalancingTree
 
             Console.WriteLine();
 
-            for (int i = 1; i < 128; i++)
+            for (int i = 1; i < 96; i++)
             {
                 int n = new Random().Next(1, 512);
 
@@ -2042,8 +2042,8 @@ public class SelfBalancingTree
 
             Console.WriteLine();
 
-            Console.WriteLine("Converting Sorted List to a Balanced BSTree... (Recursion)");
-            SelfBalancingTree<int> tree3 = tree1Copy.ToBalancedBSTree2(list);
+            Console.WriteLine("Converting Sorted List to a Optimally Balanced BSTree... (Recursion)");
+            SelfBalancingTree<int> tree3 = tree1Copy.ToBalancedBSTree(list);
             Console.WriteLine();
 
             Console.Write("Tree Size:  ");
@@ -2099,7 +2099,7 @@ public class SelfBalancingTree
 
             Console.WriteLine();
 
-            Console.WriteLine("Creating a Sorted Singly-Linked List from the Original BSTree... (Recursion)");
+            Console.WriteLine("Creating a Sorted Singly-Linked List from the Unbalaced BSTree... (Recursion)");
             (SelfBalancingTree<int>.Node, SelfBalancingTree<int>.Node) llNodes = tree1Copy.ToSinglyLinkedList();
             Console.WriteLine();
 
@@ -2132,7 +2132,7 @@ public class SelfBalancingTree
 
             Console.WriteLine();
 
-            Console.WriteLine("Creating a Sorted Doubly-Linked List (\"Flattened Tree\") from the Original BSTree... (Recursion)");
+            Console.WriteLine("Creating a Sorted Doubly-Linked List (\"Flattened Tree\") from the Unbalaced BSTree... (Recursion)");
             (SelfBalancingTree<int>.Node, SelfBalancingTree<int>.Node) dllNodes = tree1Copy.ToDoublyLinkedList();
             Console.WriteLine();
 
@@ -2181,7 +2181,7 @@ public class SelfBalancingTree
 
             Console.WriteLine();
 
-            Console.WriteLine("Creating a Sorted Circular Singly-Linked List from the Original BSTree... (Recursion)");
+            Console.WriteLine("Creating a Sorted Circular Singly-Linked List from the Unbalaced BSTree... (Recursion)");
             (SelfBalancingTree<int>.Node, SelfBalancingTree<int>.Node) cllNodes = tree1Copy.ToCircularSinglyLinkedList();
             Console.WriteLine();
 
@@ -2212,7 +2212,7 @@ public class SelfBalancingTree
 
             Console.WriteLine();
 
-            Console.WriteLine("Creating a Sorted Circular Doubly-Linked List from the Original BSTree... (Recursion)");
+            Console.WriteLine("Creating a Sorted Circular Doubly-Linked List from the Unbalaced BSTree... (Recursion)");
             (SelfBalancingTree<int>.Node, SelfBalancingTree<int>.Node) cdllNodes = tree1Copy.ToCircularDoublyLinkedList();
             Console.WriteLine();
 

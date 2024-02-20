@@ -56,3 +56,17 @@ C:\Users\Albert\Code\C#\SelfBalancingTree\SelfBalancingTree\obj\Release\net7.0\r
 C:\Users\Albert\Code\C#\SelfBalancingTree\SelfBalancingTree\obj\Release\net7.0\SelfBalancingTree.pdb
 C:\Users\Albert\Code\C#\SelfBalancingTree\SelfBalancingTree\obj\Release\net7.0\SelfBalancingTree.genruntimeconfig.cache
 C:\Users\Albert\Code\C#\SelfBalancingTree\SelfBalancingTree\obj\Release\net7.0\ref\SelfBalancingTree.dll
+C:\Users\Albert\source\repos\SelfBalancingTree\SelfBalancingTree\bin\Release\net7.0\SelfBalancingTree.exe
+C:\Users\Albert\source\repos\SelfBalancingTree\SelfBalancingTree\bin\Release\net7.0\SelfBalancingTree.deps.json
+C:\Users\Albert\source\repos\SelfBalancingTree\SelfBalancingTree\bin\Release\net7.0\SelfBalancingTree.runtimeconfig.json
+C:\Users\Albert\source\repos\SelfBalancingTree\SelfBalancingTree\bin\Release\net7.0\SelfBalancingTree.dll
+C:\Users\Albert\source\repos\SelfBalancingTree\SelfBalancingTree\bin\Release\net7.0\SelfBalancingTree.pdb
+C:\Users\Albert\source\repos\SelfBalancingTree\SelfBalancingTree\obj\Release\net7.0\SelfBalancingTree.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Albert\source\repos\SelfBalancingTree\SelfBalancingTree\obj\Release\net7.0\SelfBalancingTree.AssemblyInfoInputs.cache
+C:\Users\Albert\source\repos\SelfBalancingTree\SelfBalancingTree\obj\Release\net7.0\SelfBalancingTree.AssemblyInfo.cs
+C:\Users\Albert\source\repos\SelfBalancingTree\SelfBalancingTree\obj\Release\net7.0\SelfBalancingTree.csproj.CoreCompileInputs.cache
+C:\Users\Albert\source\repos\SelfBalancingTree\SelfBalancingTree\obj\Release\net7.0\SelfBalancingTree.dll
+C:\Users\Albert\source\repos\SelfBalancingTree\SelfBalancingTree\obj\Release\net7.0\refint\SelfBalancingTree.dll
+C:\Users\Albert\source\repos\SelfBalancingTree\SelfBalancingTree\obj\Release\net7.0\SelfBalancingTree.pdb
+C:\Users\Albert\source\repos\SelfBalancingTree\SelfBalancingTree\obj\Release\net7.0\SelfBalancingTree.genruntimeconfig.cache
+C:\Users\Albert\source\repos\SelfBalancingTree\SelfBalancingTree\obj\Release\net7.0\ref\SelfBalancingTree.dll
